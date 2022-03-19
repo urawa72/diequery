@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:12-alpine
+    ports:
+      - 5432:5432
+    environment:
+      TZ: 'Asia/Tokyo'
+    env_file:
+      - ./.env
+    # volumes:
+    # execute init sql
+    #  - ./init_db:/docker-entrypoint-initdb.d
+    # retain data at local machine
+    #   - ./tmp-pgdata:/var/lib/postgresql/data
